@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funny Game</title>
+</head>
+
+<body>
+    <script>
+        const choices = ["Rock", "Paper", "Scissors"];
+        
+        function getComputerChoice() {
+            return choices[Math.floor(Math.random() * choices.length)];
+        }
+        
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection == computerSelection) {
+                return "It's a tie!";
+            } else if (
+                (playerSelection == "Rock" && computerSelection == "Scissors") ||
+                (playerSelection == "Scissors" && computerSelection == "Paper") ||
+                (playerSelection == "Paper" && computerSelection == "Rock")
+            ) {
+                return "Player wins!";
+            } else if (
+                (playerSelection == "Scissors" && computerSelection == "Rock") ||
+                (playerSelection == "Paper" && computerSelection == "Scissors") ||
+                (playerSelection == "Rock" && computerSelection == "Paper")
+            ) {
+                return "Computer wins!";
+            }
+        }
+            const playerSelection = prompt();
+            const computerSelection = getComputerChoice();
+            const roundResult = playRound(playerSelection, computerSelection);
+    
+
+            function titleCase(string){
+            return string[0].toUpperCase() + string.slice(1).toLowerCase();
+        }
+        
+        function game(roundsToPlay) {
+            if (roundsToPlay === 0) {
+                if (result === "") {
+                    return "It's a tie! No winner.";
+                } else if (result === "Player") {
+                    return "Player wins the game!";
+                } else {
+                    return "Computer wins the game!";
+                }
+            }
+
+            const playerSelection = titleCase(prompt());
+            const computerSelection = getComputerChoice();
+            const roundResult = playRound(playerSelection, computerSelection);
+
+            console.log(`Round ${6 - roundsToPlay}: ${playerSelection} vs ${computerSelection} - ${roundResult}`);
+
+            if (roundResult === "Player wins!") {
+                result = "Player";
+            } else if (roundResult === "Computer wins!") {
+                result = "Computer";
+            }
+
+            return game(roundsToPlay - 1);
+        }
+
+        console.log(game(5));
+    </script>
+</body>
+
+</html>
