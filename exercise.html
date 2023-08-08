@@ -4,71 +4,28 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Funny Game</title>
+    <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="script.js" defer></script> 
 </head>
 
-<body>
-    <script>
-        const choices = ["Rock", "Paper", "Scissors"];
-        
-        function getComputerChoice() {
-            return choices[Math.floor(Math.random() * choices.length)];
-        }
-        
-        function playRound(playerSelection, computerSelection) {
-            if (playerSelection == computerSelection) {
-                return "It's a tie!";
-            } else if (
-                (playerSelection == "Rock" && computerSelection == "Scissors") ||
-                (playerSelection == "Scissors" && computerSelection == "Paper") ||
-                (playerSelection == "Paper" && computerSelection == "Rock")
-            ) {
-                return "Player wins!";
-            } else if (
-                (playerSelection == "Scissors" && computerSelection == "Rock") ||
-                (playerSelection == "Paper" && computerSelection == "Scissors") ||
-                (playerSelection == "Rock" && computerSelection == "Paper")
-            ) {
-                return "Computer wins!";
-            }
-        }
-            const playerSelection = prompt();
-            const computerSelection = getComputerChoice();
-            const roundResult = playRound(playerSelection, computerSelection);
-    
+<body class="bg-secondary ">
+    <nav class="navbar navbar-dark bg-dark mb-5 bg-gradient">
+        <div class="container-fluid d-flex justify-content-center">
+          <a class="navbar-brand" href="#">
+            <h1 class="display-3"> Rock vs Paper vs Scissors </h1>
+          </a>
+        </div>
+    </nav>
 
-            function titleCase(string){
-            return string[0].toUpperCase() + string.slice(1).toLowerCase();
-        }
-        
-        function game(roundsToPlay) {
-            if (roundsToPlay === 0) {
-                if (result === "") {
-                    return "It's a tie! No winner.";
-                } else if (result === "Player") {
-                    return "Player wins the game!";
-                } else {
-                    return "Computer wins the game!";
-                }
-            }
-
-            const playerSelection = titleCase(prompt());
-            const computerSelection = getComputerChoice();
-            const roundResult = playRound(playerSelection, computerSelection);
-
-            console.log(`Round ${6 - roundsToPlay}: ${playerSelection} vs ${computerSelection} - ${roundResult}`);
-
-            if (roundResult === "Player wins!") {
-                result = "Player";
-            } else if (roundResult === "Computer wins!") {
-                result = "Computer";
-            }
-
-            return game(roundsToPlay - 1);
-        }
-
-        console.log(game(5));
-    </script>
+    <main>
+        <div class="container d-flex justify-content-center">
+            <div class="selection">&#9994;</div>
+            <div class="selection">&#129306;</div>
+            <div class="selection">&#9996;</div>
+        </div>
+    </main>
 </body>
 
 </html>
