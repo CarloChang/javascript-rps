@@ -10,3 +10,7 @@ Once I can use JavaScript as good as HTML and CSS, some modifications will be ad
 ## 8/8/2023 UI-Update.
 
 Added a CSS and JS files to begin with the remodel of this project.
+
+## 9/3/2023
+
+https://raw.githack.com/CarloChang/javascript-rps/main/exercise.html
